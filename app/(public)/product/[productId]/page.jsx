@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 'use client'
 import ProductDescription from "@/components/ProductDescription";
 import ProductDetails from "@/components/ProductDetails";
