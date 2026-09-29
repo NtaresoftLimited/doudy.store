@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 'use client'
 import ProductCard from "@/components/ProductCard"
 import { useParams } from "next/navigation"
