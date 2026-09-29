@@ -1,9 +1,11 @@
 {
+  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "doudy-store",
   "compatibility_date": "2026-09-26",
-  "main": ".vercel/output/static/_worker.js/index.js",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "main": ".open-next/worker.js",
   "assets": {
-    "directory": ".vercel/output/static",
+    "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
   "observability": {
