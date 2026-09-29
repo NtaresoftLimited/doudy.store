@@ -1,5 +1,4 @@
 'use client'
-export const runtime = 'edge';
 import ProductCard from "@/components/ProductCard"
 import { useParams } from "next/navigation"
 import { useEffect, useState } from "react"
