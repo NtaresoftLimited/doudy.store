@@ -1,6 +1,5 @@
-export const runtime = 'edge';
-
 'use client'
+export const runtime = 'edge';
 import ProductDescription from "@/components/ProductDescription";
 import ProductDetails from "@/components/ProductDetails";
 import { useParams } from "next/navigation";
