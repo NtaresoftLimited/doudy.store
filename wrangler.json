@@ -1,9 +1,9 @@
 {
   "name": "doudy-store",
   "compatibility_date": "2026-09-26",
-  "main": ".vercel/output/static/_worker.js/index.js",
+  "main": ".worker-next/index.mjs",
   "assets": {
-    "directory": ".vercel/output/static",
+    "directory": ".worker-next/assets",
     "binding": "ASSETS"
   },
   "observability": {
