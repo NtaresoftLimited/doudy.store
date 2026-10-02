@@ -31,13 +31,13 @@ const ProductDetails = ({ product }) => {
             <div className="flex max-sm:flex-col-reverse gap-3">
                 <div className="flex sm:flex-col gap-3">
                     {product.images.map((image, index) => (
-                        <div key={index} onClick={() => setMainImage(product.images[index])} className="bg-slate-100 flex items-center justify-center size-26 rounded-lg group cursor-pointer">
-                            <Image src={image} className="mix-blend-multiply group-hover:scale-103 group-active:scale-95 transition" alt="" width={45} height={45} />
+                        <div key={index} onClick={() => setMainImage(product.images[index])} className="bg-slate-100 flex items-center justify-center size-26 rounded-lg group cursor-pointer overflow-hidden">
+                            <Image src={image} className="w-full h-full object-cover group-hover:scale-105 transition" alt="" width={100} height={100} />
                         </div>
                     ))}
                 </div>
-                <div className="flex justify-center items-center h-100 sm:size-113 bg-slate-100 rounded-lg ">
-                    <Image src={mainImage} alt="" width={250} height={250} className="mix-blend-multiply" />
+                <div className="flex justify-center items-center h-100 sm:size-113 bg-slate-100 rounded-lg overflow-hidden">
+                    <Image src={mainImage} alt="" width={500} height={500} className="w-full h-full object-cover" />
                 </div>
             </div>
             <div className="flex-1">
