@@ -21,11 +21,15 @@ import profile_pic1 from "./profile_pic1.jpg"
 import profile_pic2 from "./profile_pic2.jpg"
 import profile_pic3 from "./profile_pic3.jpg"
 
+import rice_cooker_1 from "./rice_cooker_1.jpg"
+import rice_cooker_2 from "./rice_cooker_2.jpg"
+import rice_cooker_3 from "./rice_cooker_3.jpg"
+import rice_cooker_4 from "./rice_cooker_4.jpg"
 export const assets = {
     upload_area, hero_model_img,
     hero_product_img1, hero_product_img2, gs_logo,
     product_img1, product_img2, product_img3, product_img4, product_img5, product_img6,
-    product_img7, product_img8, product_img9, product_img10, product_img11, product_img12,
+    product_img7, product_img8, product_img9, product_img10, product_img11, product_img12, rice_cooker_1, rice_cooker_2, rice_cooker_3, rice_cooker_4,
 }
 
 export const categories = ["Headphones", "Speakers", "Watch", "Earbuds", "Mouse", "Decoration"];
@@ -241,6 +245,61 @@ export const productDummyData = [
         rating: [...dummyRatingsData,...dummyRatingsData],
         createdAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)',
         updatedAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)',
+    },
+    {
+        id: "prod_13",
+        name: "5L large capacity smart home rice cooker",
+        description: "Experience the convenience of modern cooking with this 5L large capacity smart home rice cooker. Perfect for 4-5 people, featuring a sleek touch screen, chassis heating, and multiple functions like cake baking and heat preservation. Built with a durable plastic body and an aluminum alloy inner liner.",
+        mrp: 149,
+        price: 89,
+        images: [rice_cooker_1, rice_cooker_2, rice_cooker_3, rice_cooker_4],
+        category: "Kitchen",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: dummyRatingsData,
+        createdAt: 'Sat Jul 29 2025 14:51:25 GMT+0530 (India Standard Time)',
+        updatedAt: 'Sat Jul 29 2025 14:51:25 GMT+0530 (India Standard Time)',
+        attributes: {
+            "Brand": "other",
+            "Inner liner material": "aluminum alloy",
+            "Capacity": "5L",
+            "Function": "cake",
+            "Heating method": "Chassis heating",
+            "Operation method": "Touchscreen",
+            "Control method": "Microcomputer",
+            "Body material": "plastic",
+            "Item number": "601",
+            "Rated voltage": "220 (V)",
+            "Rated frequency": "50 (HZ)",
+            "Rated power": "50 (W)",
+            "3C Certificate Number": "2023010718540749",
+            "LCD display": "have",
+            "Intelligent Type": "Smart not supported",
+            "Product Dimensions": "25*28.5*22",
+            "Power": "Below 800W",
+            "Caliber": "25cm and below",
+            "Launch date": "2023",
+            "Panel Type": "Black microcrystalline panel",
+            "After-sales service": "Shop Three Guarantees",
+            "Number of people applicable": "4-5 people",
+            "Energy efficiency rating": "Level 3",
+            "Reservation function": "have",
+            "Scale markings": "Scale window",
+            "Packing list": "Instruction manual, power cord, rice spoon",
+            "Security features": "Anti-dry burning",
+            "Heat preservation function": "yes",
+            "Product Specifications": "European Standard, British Standard",
+            "Cross-border export": "no",
+            "Shell process": "plastic",
+            "Inner liner shape": "Single-jet straight tube bladder round",
+            "Product Certification": "other",
+            "Smart connection method": "none",
+            "Intelligent interaction methods": "none",
+            "Plug specifications": "British Standard, European Standard",
+            "Intelligence Level": "Non-intelligent",
+            "AI capabilities": "none"
+        }
     }
 ];
 

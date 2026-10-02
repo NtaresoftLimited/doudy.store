@@ -13,7 +13,7 @@ const ProductDescription = ({ product }) => {
 
             {/* Tabs */}
             <div className="flex border-b border-slate-200 mb-6 max-w-2xl">
-                {['Description', 'Reviews'].map((tab, index) => (
+                {['Description', 'Specifications', 'Reviews'].map((tab, index) => (
                     <button className={`${tab === selectedTab ? 'border-b-[1.5px] font-semibold' : 'text-slate-400'} px-3 py-2 font-medium`} key={index} onClick={() => setSelectedTab(tab)}>
                         {tab}
                     </button>
@@ -23,6 +23,26 @@ const ProductDescription = ({ product }) => {
             {/* Description */}
             {selectedTab === "Description" && (
                 <p className="max-w-xl">{product.description}</p>
+            )}
+
+            {/* Specifications */}
+            {selectedTab === "Specifications" && (
+                <div className="max-w-xl">
+                    {product.attributes ? (
+                        <table className="w-full text-left text-sm text-slate-500">
+                            <tbody>
+                                {Object.entries(product.attributes).map(([key, value], idx) => (
+                                    <tr key={idx} className="border-b border-slate-100">
+                                        <td className="py-2 font-medium text-slate-700 w-1/3 capitalize">{key}</td>
+                                        <td className="py-2">{value}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    ) : (
+                        <p>No specifications available.</p>
+                    )}
+                </div>
             )}
 
             {/* Reviews */}
