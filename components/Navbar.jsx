@@ -23,7 +23,7 @@ const Navbar = () => {
                 <div className="flex items-center justify-between max-w-7xl mx-auto py-4  transition-all">
 
                     <Link href="/">
-                        <img src="/logo-primary.png" alt="doudy.store" className="w-64 md:w-80 -my-6 object-contain" />
+                        <img src="/logo-primary.png" alt="doudy.store" className="h-12 md:h-14 w-auto object-contain" />
                     </Link>
 
                     {/* Desktop Menu */}
