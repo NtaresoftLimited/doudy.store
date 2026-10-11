@@ -3,6 +3,8 @@ import { useRef } from 'react'
 import { Provider } from 'react-redux'
 import { makeStore } from '../lib/store'
 
+import OdooSync from '@/components/OdooSync'
+
 export default function StoreProvider({ children }) {
   const storeRef = useRef(undefined)
   if (!storeRef.current) {
@@ -10,5 +12,10 @@ export default function StoreProvider({ children }) {
     storeRef.current = makeStore()
   }
 
-  return <Provider store={storeRef.current}>{children}</Provider>
+  return (
+    <Provider store={storeRef.current}>
+      <OdooSync />
+      {children}
+    </Provider>
+  )
 }

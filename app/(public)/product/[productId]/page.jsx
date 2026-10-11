@@ -1,9 +1,12 @@
 import ProductPageClient from './ProductPageClient';
 import { productDummyData } from '@/assets/assets';
+import { fetchOdooProducts } from '@/lib/odoo';
 
-export function generateStaticParams() {
-  return productDummyData.map((product) => ({
-    productId: product.id,
+export async function generateStaticParams() {
+  const odooProducts = await fetchOdooProducts();
+  const allProducts = [...productDummyData, ...odooProducts];
+  return allProducts.map((product) => ({
+    productId: String(product.id),
   }));
 }
 

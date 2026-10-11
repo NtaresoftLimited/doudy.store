@@ -21,12 +21,12 @@ const Footer = () => {
             ]
         },
         {
-            title: "WEBSITE?",
+            title: "SERVICES",
             links: [
                 { text: "Home", path: '/', icon: null },
-                { text: "Privacy Policy", path: '/', icon: null },
+                { text: "Track Shipment", path: '/track', icon: null },
+                { text: "Customer Portal", path: 'https://app.doudy.store/web/login', icon: null },
                 { text: "Become Plus Member", path: '/pricing', icon: null },
-                { text: "Create Your Store", path: '/create-store', icon: null },
             ]
         },
         {
