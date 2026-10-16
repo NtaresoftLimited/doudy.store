@@ -25,14 +25,22 @@ import rice_cooker_1 from "./rice_cooker_1.jpg"
 import rice_cooker_2 from "./rice_cooker_2.jpg"
 import rice_cooker_3 from "./rice_cooker_3.jpg"
 import rice_cooker_4 from "./rice_cooker_4.jpg"
+
+import water_heater_1 from "./water_heater_1.jpg"
+import water_heater_2 from "./water_heater_2.jpg"
+import water_heater_3 from "./water_heater_3.jpg"
+import water_heater_4 from "./water_heater_4.jpg"
+import water_heater_5 from "./water_heater_5.jpg"
+
 export const assets = {
     upload_area, hero_model_img,
     hero_product_img1, hero_product_img2, gs_logo,
     product_img1, product_img2, product_img3, product_img4, product_img5, product_img6,
     product_img7, product_img8, product_img9, product_img10, product_img11, product_img12, rice_cooker_1, rice_cooker_2, rice_cooker_3, rice_cooker_4,
+    water_heater_1, water_heater_2, water_heater_3, water_heater_4, water_heater_5,
 }
 
-export const categories = ["Headphones", "Speakers", "Watch", "Earbuds", "Mouse", "Decoration"];
+export const categories = ["Kitchen", "Home Appliances", "Headphones", "Speakers", "Watch", "Earbuds", "Mouse", "Decoration"];
 
 export const dummyRatingsData = [
     { id: "rat_1", rating: 4.2, review: "I was a bit skeptical at first, but this product turned out to be even better than I imagined. The quality feels premium, it's easy to use, and it delivers exactly what was promised. I've already recommended it to friends and will definitely purchase again in the future.", user: { name: 'Kristin Watson', image: profile_pic1 }, productId: "prod_1", createdAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', updatedAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', product: { name: 'Bluetooth Speakers', category:'Electronics', id:'prod_1'} },
@@ -299,6 +307,51 @@ export const productDummyData = [
             "Plug specifications": "British Standard, European Standard",
             "Intelligence Level": "Non-intelligent",
             "AI capabilities": "none"
+        }
+    },
+    {
+        id: "prod_14",
+        name: "Multi Safety Wall-mounted 6L-10L Natural Instant Hot Gaz Propane Tankless LPG Gas Water Heater",
+        description: "Experience reliable, on-demand endless hot water with this Multi Safety Wall-mounted Tankless LPG / Natural Gas Water Heater. Engineered with high-grade copper heat exchangers, pulse ignition, and multi-layer safety protections against overheating, dry-burning, and gas leakage. Ideal for kitchens, bathrooms, and outdoor balcony installations.",
+        mrp: 495000,
+        price: 412000,
+        images: [water_heater_1, water_heater_2, water_heater_3, water_heater_4, water_heater_5],
+        category: "Home Appliances",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: dummyRatingsData,
+        createdAt: 'Sat Oct 16 2026 04:45:00 GMT+0300 (East Africa Time)',
+        updatedAt: 'Sat Oct 16 2026 04:45:00 GMT+0300 (East Africa Time)',
+        attributes: {
+            "Origin": "China / Guangdong / Zhongshan",
+            "Voltage": "120～220V / 3V DC (Pulse Ignition)",
+            "Control Mode": "Mechanical Edition (Knob Control)",
+            "Gas Type": "LPG / Natural Gas (NG)",
+            "Power Source": "Battery Powered (Pulse ignition 3V DC)",
+            "Usage": "Kitchen / Bathroom / Household",
+            "Controls Type": "Knob / Button Control",
+            "Certification": "CE, RoHS, ISO9001",
+            "Capacity": "6L - 20L (6L / 8L / 10L / 12L)",
+            "Installation": "Wall Mounted / Outdoor / Open Balcony",
+            "Energy Efficiency Grade": "Level 1",
+            "Temperature Range": "35℃ - 65℃",
+            "Water Pressure": "0.02 - 0.8 Mpa",
+            "Heat Exchanger": "0.8 - 2.0 KG Real Copper",
+            "Heat Efficiency": "≥85%",
+            "Noise Level": "70 dB(A)",
+            "Connection": "220-240 Volt (Max power consumption: 45W)",
+            "Water Flow": "3 to 12 Liters per minute",
+            "Connection Flue Gas Discharge": "60/100 mm",
+            "Exhaust Way": "Natural Flue Type",
+            "Panel Material": "Stainless Steel / Powder Coated / Glass",
+            "Color": "Black / White / Silver",
+            "Rated Gas Pressure": "LPG: 2800Pa | NG: 1300Pa / 2000Pa",
+            "Connection Pipe Spec": "Water Inlet: G1/2, Water Outlet: G1/2, Gas Inlet: G1/2",
+            "Product Dimensions": "6L: 440*300*135mm | 10L: 550*330*188mm",
+            "Packing Dimensions": "6L: 525*360*200mm | 10L: 635*395*245mm",
+            "Gross Weight": "6L: 5.9kg | 8L: 7.8kg | 10L: 9.2kg | 12L: 10.5kg",
+            "Security Features": "Anti-dry burning, flame-out protection, over-pressure protection, thermal protection"
         }
     }
 ];
