@@ -4,11 +4,11 @@ import AddressModal from './AddressModal';
 import { useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+import { useCurrency } from '@/lib/useCurrency';
 
 const OrderSummary = ({ totalPrice, items }) => {
 
-    const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || '$';
-
+    const { formatPrice } = useCurrency();
     const router = useRouter();
 
     const addressList = useSelector(state => state.address.list);
@@ -77,9 +77,9 @@ const OrderSummary = ({ totalPrice, items }) => {
                         {coupon && <p>Coupon:</p>}
                     </div>
                     <div className='flex flex-col gap-1 font-medium text-right'>
-                        <p>{currency}{totalPrice.toLocaleString()}</p>
+                        <p>{formatPrice(totalPrice)}</p>
                         <p>Free</p>
-                        {coupon && <p>{`-${currency}${Math.round(coupon.discount / 100 * totalPrice).toLocaleString()}`}</p>}
+                        {coupon && <p>{`-${formatPrice(Math.round(coupon.discount / 100 * totalPrice))}`}</p>}
                     </div>
                 </div>
                 {
@@ -99,7 +99,7 @@ const OrderSummary = ({ totalPrice, items }) => {
             </div>
             <div className='flex justify-between py-4'>
                 <p>Total:</p>
-                <p className='font-medium text-right'>{currency}{coupon ? Math.round(totalPrice - (coupon.discount / 100 * totalPrice)).toLocaleString() : totalPrice.toLocaleString()}</p>
+                <p className='font-medium text-right'>{formatPrice(coupon ? Math.round(totalPrice - (coupon.discount / 100 * totalPrice)) : totalPrice)}</p>
             </div>
             <button onClick={e => toast.promise(handlePlaceOrder(e), { loading: 'placing Order...' })} className='w-full bg-slate-700 text-white py-2.5 rounded hover:bg-slate-900 active:scale-95 transition-all'>Place Order</button>
 

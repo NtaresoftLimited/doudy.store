@@ -1,79 +1,66 @@
 'use client'
-import { ArrowRight, StarIcon } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 
 const ProductDescription = ({ product }) => {
 
+    const hasAttributes = product.attributes && Object.keys(product.attributes).length > 0;
+    const tabs = hasAttributes ? ['Description', 'Specifications'] : ['Description'];
     const [selectedTab, setSelectedTab] = useState('Description')
 
     return (
-        <div className="my-18 text-sm text-slate-600">
+        <div className="my-14 text-sm text-slate-600">
 
             {/* Tabs */}
-            <div className="flex border-b border-slate-200 mb-6 max-w-2xl">
-                {['Description', 'Specifications', 'Reviews'].map((tab, index) => (
-                    <button className={`${tab === selectedTab ? 'border-b-[1.5px] font-semibold' : 'text-slate-400'} px-3 py-2 font-medium`} key={index} onClick={() => setSelectedTab(tab)}>
-                        {tab}
-                    </button>
-                ))}
-            </div>
-
-            {/* Description */}
-            {selectedTab === "Description" && (
-                <p className="max-w-xl">{product.description}</p>
-            )}
-
-            {/* Specifications */}
-            {selectedTab === "Specifications" && (
-                <div className="max-w-xl">
-                    {product.attributes ? (
-                        <table className="w-full text-left text-sm text-slate-500">
-                            <tbody>
-                                {Object.entries(product.attributes).map(([key, value], idx) => (
-                                    <tr key={idx} className="border-b border-slate-100">
-                                        <td className="py-2 font-medium text-slate-700 w-1/3 capitalize">{key}</td>
-                                        <td className="py-2">{value}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    ) : (
-                        <p>No specifications available.</p>
-                    )}
-                </div>
-            )}
-
-            {/* Reviews */}
-            {selectedTab === "Reviews" && (
-                <div className="flex flex-col gap-3 mt-14">
-                    {product.rating.map((item,index) => (
-                        <div key={index} className="flex gap-5 mb-10">
-                            <Image src={item.user.image} alt="" className="size-10 rounded-full" width={100} height={100} />
-                            <div>
-                                <div className="flex items-center" >
-                                    {Array(5).fill('').map((_, index) => (
-                                        <StarIcon key={index} size={18} className='text-transparent mt-0.5' fill={item.rating >= index + 1 ? "#00C950" : "#D1D5DB"} />
-                                    ))}
-                                </div>
-                                <p className="text-sm max-w-lg my-4">{item.review}</p>
-                                <p className="font-medium text-slate-800">{item.user.name}</p>
-                                <p className="mt-3 font-light">{new Date(item.createdAt).toDateString()}</p>
-                            </div>
-                        </div>
+            {tabs.length > 1 && (
+                <div className="flex border-b border-slate-200 mb-6 max-w-2xl">
+                    {tabs.map((tab, index) => (
+                        <button
+                            className={`${tab === selectedTab ? 'border-b-2 border-slate-800 font-semibold text-slate-800' : 'text-slate-400'} px-4 py-2 font-medium transition-colors`}
+                            key={index}
+                            onClick={() => setSelectedTab(tab)}
+                        >
+                            {tab}
+                        </button>
                     ))}
                 </div>
             )}
 
-            {/* Store Page */}
-            <div className="flex gap-3 mt-14">
-                <Image src={product.store.logo} alt="" className="size-11 rounded-full ring ring-slate-400" width={100} height={100} />
-                <div>
-                    <p className="font-medium text-slate-600">Product by {product.store.name}</p>
-                    <Link href={`/shop/${product.store.username}`} className="flex items-center gap-1.5 text-green-500"> view store <ArrowRight size={14} /></Link>
+            {/* Description */}
+            {selectedTab === "Description" && (
+                <p className="max-w-2xl leading-relaxed text-slate-600">{product.description}</p>
+            )}
+
+            {/* Specifications */}
+            {selectedTab === "Specifications" && hasAttributes && (
+                <div className="max-w-3xl">
+                    <table className="w-full text-left text-sm text-slate-600 border border-slate-200 rounded-lg overflow-hidden">
+                        <tbody>
+                            {Object.entries(product.attributes).map(([key, value], idx) => (
+                                <tr key={idx} className={idx % 2 === 0 ? "bg-slate-50/60" : "bg-white"}>
+                                    <td className="py-2.5 px-4 font-medium text-slate-800 w-1/3 border-b border-slate-100">{key}</td>
+                                    <td className="py-2.5 px-4 border-b border-slate-100">{value}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
-            </div>
+            )}
+
+            {/* Store Page */}
+            {product.store && (
+                <div className="flex gap-3 mt-12 pt-6 border-t border-slate-200">
+                    <Image src={product.store.logo} alt="" className="size-11 rounded-full ring ring-slate-200" width={100} height={100} />
+                    <div>
+                        <p className="font-medium text-slate-700">Product by {product.store.name}</p>
+                        <Link href={`/shop/${product.store.username}`} className="flex items-center gap-1 text-slate-800 font-medium hover:underline text-xs mt-0.5">
+                            View store <ArrowRight size={13} />
+                        </Link>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
